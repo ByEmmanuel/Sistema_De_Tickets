@@ -8,3 +8,4 @@ def adios(a):
 
 print(adios("Adios mundo!"))
 
+print ("Hola oscar desde mi computadora de Emmanuel")

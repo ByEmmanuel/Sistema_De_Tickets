@@ -1,0 +1,3 @@
+/Users/byemmanuel/Desktop/Programacion/UNIVERSIDAD/Proyectos/PrimerSemestre/Creador de codigos AEROPUERTOS/cmake-build-debug/CMakeFiles/Creador_de_codigos_AEROPUERTOS.dir
+/Users/byemmanuel/Desktop/Programacion/UNIVERSIDAD/Proyectos/PrimerSemestre/Creador de codigos AEROPUERTOS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/byemmanuel/Desktop/Programacion/UNIVERSIDAD/Proyectos/PrimerSemestre/Creador de codigos AEROPUERTOS/cmake-build-debug/CMakeFiles/rebuild_cache.dir

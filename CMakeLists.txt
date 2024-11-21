@@ -4,4 +4,10 @@ project(Creador_de_codigos_AEROPUERTOS)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Creador_de_codigos_AEROPUERTOS
-    Main/holamundo.cpp)
+    Main/ProyectoFund.cpp
+    Main/RegistroDAO.h
+    Main/Controladores.h
+    Main/UsuariosEntity.h
+    Main/CalendarioTerminal.h
+
+)

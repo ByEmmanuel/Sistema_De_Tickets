@@ -1,0 +1,3 @@
+/Users/byemmanuel/Desktop/Programacion/UNIVERSIDAD/Proyectos/PrimerSemestre/SistemaDeTickets/cmake-build-main/CMakeFiles/Creador_de_codigos_AEROPUERTOS.dir
+/Users/byemmanuel/Desktop/Programacion/UNIVERSIDAD/Proyectos/PrimerSemestre/SistemaDeTickets/cmake-build-main/CMakeFiles/edit_cache.dir
+/Users/byemmanuel/Desktop/Programacion/UNIVERSIDAD/Proyectos/PrimerSemestre/SistemaDeTickets/cmake-build-main/CMakeFiles/rebuild_cache.dir

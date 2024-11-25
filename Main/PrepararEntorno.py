@@ -21,12 +21,35 @@ def detectar_sistema():
     elif sistema == "Windows":
         return "Windows"
     elif sistema == "Linux":
-        return "Linux"
+         try:
+            # Detecta la distribución Linux
+            with open("/etc/os-release") as f:
+                info = f.read().lower()
+                if "arch" in info:
+                    print("Distribución detectada: Arch Linux")
+                    return "Arch"
+                elif "debian" in info or "ubuntu" in info:
+                    print("Distribución detectada: Debian/Ubuntu")
+                    return "Debian"
+                elif "fedora" in info or "red hat" in info:
+                    print("Distribución detectada: Fedora/Red Hat")
+                    return "Fedora"
+                else:
+                    print("Distribución desconocida, usando default")
+                    return "Linux"
+        except FileNotFoundError:
+            print("No se pudo detectar la distribución.")
+            return "Linux"
+    else:
+        print("Sistema operativo no reconocido.")
+        return None
+
     else:
         return "Desconocido"
 
 def instalar_paquete(paquete):
     distro = detectar_sistema()
+    print(f"Sistema detectado: {distro}")
     print(f"Instalando {paquete}...")
 
     if distro == "macOS":
@@ -53,7 +76,6 @@ def instalar_paquete(paquete):
 def ejecutar_cpp():
     sistema = detectar_sistema()
     print(f"Detectando sistema operativo: {sistema}")
-    #instalar_paquete(str(input("Ingrese el nombre del paquete a instalar: ")))
     
     # Ruta del archivo C++ principal
     archivo_cpp = "Main/ProyectoFund.cpp"
@@ -87,4 +109,5 @@ def ejecutar_cpp():
 
 # Llamada al programa
 if __name__ == "__main__":
+    instalar_paquete(str(input("Ingrese el nombre del paquete a instalar: ")))
     ejecutar_cpp()

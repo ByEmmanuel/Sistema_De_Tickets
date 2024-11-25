@@ -17,9 +17,9 @@ Controladores* controlador = new Controladores;
 inline void sistema() {
     bool banderaAuxiliar;
     while (bandera) {
-        array<std::string, 4> tramite = {"Crear Cita", "Consultar una Cita", "Modificar Una Cita", "Cancelar Una Cita"};
+        array<std::string, 5> tramite = {"Crear Cita", "Consultar una Cita", "Modificar Una Cita", "Cancelar Una Cita", "Listar Usuarios"};
 
-        cout << "Seleccione una opción (1-4):" << endl;
+        cout << "\nSeleccione una opción (1-5):" << endl;
         for (int i = 0; i < tramite.size(); ++i) {
             cout << i + 1 << ". " << tramite[i] << endl;
         }
@@ -57,6 +57,14 @@ inline void sistema() {
                     bandera = false;
                 }
                 break;
+            case 5: 
+                cout << "Eligió Listar Usuarios" << endl;
+                //Logica para listar usuarios
+                banderaAuxiliar = controlador -> listarUsuarios();
+                if (!banderaAuxiliar) {
+                    bandera = false;
+                }
+                break;
             default:
                 cout << "Opción no válida" << endl;
                 bandera = false;
@@ -65,9 +73,16 @@ inline void sistema() {
     }
 }
 
+inline void modelajeUsuarios() {
+    cout << "Modelaje de Usuarios" << endl;
+    // Crear usuarios
+    controlador -> modelarUsuarios();
+}
+
 int main() {
     tiempo->init();
 
+    modelajeUsuarios();
     sistema();
 
     tiempo->end();

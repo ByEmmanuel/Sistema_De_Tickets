@@ -97,6 +97,11 @@ public:
         return diaOcupado;
     }
 
+    void setDiasOcupados(int dia) {
+        diaOcupado.insert(dia); 
+    }
+
+
         int setNuevaFechaCal(int& diaNuevo, int diaViejo, UsuariosEntity& usuario) {
             try {
                 auto it = diaOcupado.find(diaViejo);

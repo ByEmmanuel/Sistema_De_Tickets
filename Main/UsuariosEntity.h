@@ -11,13 +11,13 @@
 
 
 using namespace std;
-
 class UsuariosEntity {
 
-int id_usuario;
+    int id_usuario;
     string nombre;
     int codigo;
     string correo;
+    //Variable sin usar
     string llave_acceso;
     int diaCita;
     //Retornar un mini calendario en terminal para que el usuario registre su cita
@@ -70,7 +70,18 @@ public:
     void setDiaCita(int dia_cita){
         this->diaCita = dia_cita;
     }
+
+    //Logica no valida para el proyecto general, solo usos de prueba para el proyecto
+    void setUsuario(int id_usuario, string nombre, int codigo, string correo, int diaCita){
+        this->id_usuario = id_usuario;
+        this->nombre = nombre;
+        this->codigo = codigo;
+        this->correo = correo;
+        this->diaCita = diaCita;
+        
+    }
 };
+
 
 struct metaDatosUsuarios{
     string nombre;

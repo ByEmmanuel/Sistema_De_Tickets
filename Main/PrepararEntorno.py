@@ -104,8 +104,6 @@ def ejecutar_cpp():
 
 # Llamada al programa
 if __name__ == "__main__":
-    opc = str(input("Desea instalar un paquete? (S/N): "))
-    if opc == "S" or opc == "s":
-        instalar_paquete(str(input("Ingrese el nombre del paquete a instalar: ")))
-        
+    print("Preparando el entorno para el proyecto...\n si eres de linux procura tener tu sistema actualizado!")
+    instalar_paquete(str(input("Ingrese el nombre del paquete a instalar: ")))
     ejecutar_cpp()

@@ -200,6 +200,34 @@ public:
         }
     }
 
+    static int listarUsuarios(){
+        cout << "Estos son los usuarios y sus caracteristicas en la base de datos; \n";
+        for (const auto& usuario : listaUsuarios ){
+            cout << "\n Nombre Usuario: " << usuario.getNombre();
+            cout << "\n Codigo Usuario: " << usuario.getCodigo();
+            cout << "\n Cita Usuario: " << usuario.getCita();
+            cout << "\n Correo Usuario: " << usuario.getCorreo() << "\n";
+        }
+        return 1;
+    }
+
+    /**
+     * Función para modelar los usuarios
+     * Funcion no recomendada para ser usada en el main
+     * Solo fines de testeo
+     */
+    static void modelarUsuarios(){
+        
+        usuario->setUsuario(1,"Juan Manuel Lopez Perez", 123456, "manuel@gmail.com", 15);   
+        //calendario->setDiasOcupados(15);
+        listaUsuarios.push_front(*usuario);
+        usuario->setUsuario(2,"Sofia Reyes Morena Baltazar", 2219863, "SofRey@gmail.com", 20);   
+        calendario->setDiasOcupados(20);
+        listaUsuarios.push_front(*usuario);
+
+        
+    }
+
     ~Controladores();
 };
 

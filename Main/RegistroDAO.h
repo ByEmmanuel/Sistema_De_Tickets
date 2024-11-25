@@ -31,7 +31,7 @@ public:
     // FUNCION READ
     // Función para buscar un usuario por nombre
 
-    static UsuariosEntity buscarUsuarioPorNombre(const string& nombreBuscado, list<UsuariosEntity> listaUsuarios) {
+    static UsuariosEntity buscarUsuarioPorNombre(const std::string& nombreBuscado, std::list<UsuariosEntity> listaUsuarios) {
          //Lo ponemos dentro de un try catch por si no se encuentra el usuario, devolver un error (Excepcion)
          try {
              // Iteramos sobre la lista de usuarios
@@ -52,7 +52,7 @@ public:
          return {};
     }
 
-    static UsuariosEntity buscarUsuarioPorCorreo(const string& correo, list<UsuariosEntity> listaUsuarios) {
+    static UsuariosEntity buscarUsuarioPorCorreo(const std::string& correo, std::list<UsuariosEntity> listaUsuarios) {
         try {
             for (UsuariosEntity& usuario : listaUsuarios) {
 
@@ -74,7 +74,7 @@ public:
     }
 
     // FUNCION UPDATE
-    static UsuariosEntity buscarCitaYmodificar(const string& correo, list<UsuariosEntity>& listaUsuarios,
+    static UsuariosEntity buscarCitaYmodificar(const std::string& correo, std::list<UsuariosEntity>& listaUsuarios,
                                 /*int& diaViejo,*/ int& diaNuevo, CalendarioTerminal& calendario){
         try{
             for (UsuariosEntity& usuario : listaUsuarios) { // nota el uso de `&` aquí

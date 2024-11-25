@@ -44,7 +44,7 @@ def detectar_sistema():
         return "Desconocido"
 def instalar_paquete(paquete):
     distro = detectar_sistema()
-    print(f"Sistema detectado: {distro}")
+    print(f"Detectando sistema operativo: {distro}")
     print(f"Instalando {paquete}...")
 
     if distro == "macOS":
@@ -104,5 +104,8 @@ def ejecutar_cpp():
 
 # Llamada al programa
 if __name__ == "__main__":
-    instalar_paquete(str(input("Ingrese el nombre del paquete a instalar: ")))
+    opc = str(input("Desea instalar un paquete? (S/N): "))
+    if opc == "S" or opc == "s":
+        instalar_paquete(str(input("Ingrese el nombre del paquete a instalar: ")))
+        
     ejecutar_cpp()

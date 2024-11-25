@@ -10,8 +10,8 @@ using namespace std;
 
 class CalendarioTerminal {
 private:
-    vector<int> calendarioActual;
-    set<int> diaOcupado;
+    std::vector<int> calendarioActual;
+    std::set<int> diaOcupado;
 
     // Función que determina si un año es bisiesto
     static bool esBisiesto(int year) {
@@ -20,7 +20,7 @@ private:
 
     // Función que devuelve el número de días en un mes dado
     static int obtenerDiasEnMes(int mes, int year) {
-        vector<int> diasPorMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        std::vector<int> diasPorMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         if (mes == 2 && esBisiesto(year)) {
             return 29;
         }
@@ -38,9 +38,9 @@ private:
 
 public:
     // Función para generar el calendario y marcar el día seleccionado
-    vector<int> generarCalendario(int seleccionDia, int mes, int year) {
+    std::vector<int> generarCalendario(int seleccionDia, int mes, int year) {
         calendarioActual.clear();  // Limpia el calendario antes de generarlo
-        vector<std::string> diasSemana = {"Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"};
+        std::vector<std::string> diasSemana = {"Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"};
         int primerDia = obtenerPrimerDiaDelMes(mes, year);
         int diasEnMes = obtenerDiasEnMes(mes, year);
 
@@ -69,7 +69,7 @@ public:
     }
 
     // Función para mostrar el calendario guardado con días ocupados marcados
-    static void mostrarCalendario(const vector<int>& calendarioGuardado, const set<int>& diasOcupados) {
+    static void mostrarCalendario(const std:: vector<int>& calendarioGuardado, const std::set<int>& diasOcupados) {
         int diaSemana = 0;
         for (int dia : calendarioGuardado) {
             if (dia == 0) {
@@ -93,7 +93,7 @@ public:
     }
 
     // Getter para obtener los días ocupados desde fuera de la clase
-    const set<int>& obtenerDiasOcupados() const {
+    const std::set<int>& obtenerDiasOcupados() const {
         return diaOcupado;
     }
 
@@ -127,7 +127,7 @@ public:
     }
 
 
-    void setCalendarioCctual(const vector<int>& calendario_actual){
+    void setCalendarioCctual(const std::vector<int>& calendario_actual){
         calendarioActual = calendario_actual;
     }
 };

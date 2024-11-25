@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <algorithm>
 
 #include <vector>
 
@@ -20,11 +21,11 @@ UsuariosEntity* usuario = new UsuariosEntity;
 
 // La lista guarda en su momento los valores que se guardaron primero, los valores alterados (cambiados,
 // no se actualizan de la lista ya que es un usuario y esto simula ser la base de datos)
-list<UsuariosEntity> listaUsuarios;  // Cambiado pmr::list a std::list
+std::list<UsuariosEntity> listaUsuarios;  // Cambiado pmr::list a std::list
 
 
 //pmr::vector<int> arrayCalendario;
-vector<int> calendarioDB;
+std::vector<int> calendarioDB;
 int opcDia;
 int diaCambCita;
 
@@ -43,7 +44,7 @@ public:
         cout << "Pulse 1 para cerrar la app, \nPulse 2 para continuar" << endl;
         cin >> opcion;
         cout << "opcion escogida : " << opcion << endl;
-        string primerNombre, segundoNombre, primerApellido, segundoApellido, codigoALumno, correoAlumno;
+        std::string primerNombre, segundoNombre, primerApellido, segundoApellido, codigoALumno, correoAlumno;
 
         switch (opcion){
             case 1:
@@ -104,7 +105,7 @@ public:
 
 
 
-            string nombreCompletoUsuario = primerNombre + " " + segundoNombre + " " + primerApellido + " " +  segundoApellido + "\n";
+            std::string nombreCompletoUsuario = primerNombre + " " + segundoNombre + " " + primerApellido + " " +  segundoApellido + "\n";
             //Validar si el nombre contiene numeros
             for (int i = 0; i < nombreCompletoUsuario.length(); i++){
                 if (isdigit(nombreCompletoUsuario[i])){
@@ -135,7 +136,7 @@ public:
     }
     static int consultarCita(){
         cout << "Ingrese correo alumno" << endl;
-        string correo;
+        std::string correo;
         cin >> correo;
         UsuariosEntity usuario = registroDao->buscarUsuarioPorCorreo(correo, listaUsuarios);
         CalendarioTerminal::mostrarCalendario(calendarioDB, calendario->obtenerDiasOcupados());
@@ -152,7 +153,7 @@ public:
 
     static int modificarCita(){
         cout << "Ingrese correo alumno" << endl;
-        string correo;
+        std::string correo;
         cin >> correo;
         cout << "¿Por cual dia quieres cambiarlo?";
 
@@ -176,7 +177,7 @@ public:
 
     static int eliminarCita(){
         cout << "Ingrese correo alumno" << endl;
-        string correo;
+        std::string correo;
         cin >> correo;
         UsuariosEntity usuarioDAO = registroDao->buscarUsuarioPorCorreo(correo, listaUsuarios);
 

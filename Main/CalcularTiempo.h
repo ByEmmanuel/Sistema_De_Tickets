@@ -23,7 +23,7 @@ using namespace std;
         }
 
         // Metodo para calcular y mostrar el tiempo transcurrido
-        void retornarTiempo(string mensaje)
+        void retornarTiempo(std::string mensaje)
         {
             auto tiempoTranscurrido = chrono::duration_cast<chrono::nanoseconds>(tiempoFin - tiempoInicio).
                 count();

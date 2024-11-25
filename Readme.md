@@ -79,10 +79,22 @@ El sistema está diseñado con una arquitectura clara para facilitar su mantenim
     python3 AutoCompletions.py  
     ```
 
-3. **Ejecución ---SOLO EN WINDOWS---**:
+3. **Ejecución**:
     ```bash
     ./generador_de_tickets
     ```
+
+## PARA WINDOWS AQUI
+  1. **Primer paso Copia el repositorio**: Clona el repositorio:
+    ```bash
+    git clone https://github.com/ByEmmanuel/Sistema_De_Tickets.git
+    ```
+
+2. **Compilación**:
+    ```bash
+    
+    ```
+
 
 
 ## Conclusiones 🤝

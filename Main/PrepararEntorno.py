@@ -13,40 +13,35 @@ def ejecutar_comando(comando, descripcion):
     else:
         print(f"Completado: {descripcion}\n")
 
-# Detecta el sistema operativo para ajustar comandos
 def detectar_sistema():
+    """
+    Detecta el sistema operativo y, si es Linux, identifica la distribución específica.
+    Retorna el nombre del sistema operativo o la distribución.
+    """
+    import platform
+
     sistema = platform.system()
+
     if sistema == "Darwin":
         return "macOS"
     elif sistema == "Windows":
         return "Windows"
     elif sistema == "Linux":
-         try:
-            # Detecta la distribución Linux
-            with open("/etc/os-release") as f:
+        try:
+            with open("/etc/os-release", "r") as f:
                 info = f.read().lower()
-                if "arch" in info:
-                    print("Distribución detectada: Arch Linux")
-                    return "Arch"
-                elif "debian" in info or "ubuntu" in info:
-                    print("Distribución detectada: Debian/Ubuntu")
-                    return "Debian"
-                elif "fedora" in info or "red hat" in info:
-                    print("Distribución detectada: Fedora/Red Hat")
-                    return "Fedora"
-                else:
-                    print("Distribución desconocida, usando default")
-                    return "Linux"
+            if "arch" in info:
+                return "Arch"
+            elif "debian" in info or "ubuntu" in info:
+                return "Debian"
+            elif "fedora" in info or "red hat" in info:
+                return "Fedora"
+            else:
+                return "Linux"
         except FileNotFoundError:
-            print("No se pudo detectar la distribución.")
-            return "Linux"
-    else:
-        print("Sistema operativo no reconocido.")
-        return None
-
+            return "Linux"  
     else:
         return "Desconocido"
-
 def instalar_paquete(paquete):
     distro = detectar_sistema()
     print(f"Sistema detectado: {distro}")

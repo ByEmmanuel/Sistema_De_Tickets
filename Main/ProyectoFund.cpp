@@ -17,7 +17,7 @@ Controladores* controlador = new Controladores;
 inline void sistema() {
     bool banderaAuxiliar;
     while (bandera) {
-        array<string, 4> tramite = {"Crear Cita", "Consultar una Cita", "Modificar Una Cita", "Cancelar Una Cita"};
+        array<std::string, 4> tramite = {"Crear Cita", "Consultar una Cita", "Modificar Una Cita", "Cancelar Una Cita"};
 
         cout << "Seleccione una opción (1-4):" << endl;
         for (int i = 0; i < tramite.size(); ++i) {

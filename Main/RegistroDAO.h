@@ -76,7 +76,8 @@ public:
     // FUNCION UPDATE
     static UsuariosEntity buscarCitaYmodificar(const string& correo, list<UsuariosEntity>& listaUsuarios,
                                 /*int& diaViejo,*/ int& diaNuevo, CalendarioTerminal& calendario){
-        for (UsuariosEntity& usuario : listaUsuarios) { // nota el uso de `&` aquí
+        try{
+            for (UsuariosEntity& usuario : listaUsuarios) { // nota el uso de `&` aquí
             if(usuario.getCorreo() == correo) {
                 cout << "\nTu cita es el dia: " << usuario.getCita() << "\n";
 
@@ -86,7 +87,12 @@ public:
                 return usuario;
             }
         }
-        cout << "Usuario no encontrado o no tiene cita\n";
+        }catch(const exception& e){
+            cerr << e.what() << '\n';
+        }
+            cout << "Usuario no encontrado o no tiene cita\n";
+            //return objeto vacío
+        return {};
     }
 
 };

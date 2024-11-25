@@ -1,3 +1,7 @@
 cmake-build-debug
 .idea
 .vscode
+build
+CMakeFiles
+Resources
+info.plist

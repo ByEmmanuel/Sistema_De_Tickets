@@ -131,7 +131,7 @@ public:
             return 1;
 
             }
-
+            return 0;
     }
     static int consultarCita(){
         cout << "Ingrese correo alumno" << endl;
